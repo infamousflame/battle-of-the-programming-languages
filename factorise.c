@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
     for (int i = 0; i < lines; i++) {
         fscanf(stream, "%" PRIu64, &n);
         a = factorise(n);
-        printf("%" PRIu64 " * %" PRIu64 " = %" PRIu64 "\n", a, n / a, n);
+        printf("%" PRIu64 " = %" PRIu64 " * %" PRIu64 "\n", n, a, n / a);
     }
     end = clock();
     if (stream != stdin) fclose(stream);
