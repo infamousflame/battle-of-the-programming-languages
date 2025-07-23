@@ -8,14 +8,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define MILLER_RABIN_ITERATIONS 10
-
 uint64_t int_sqrt(uint64_t n) {
     uint64_t x = n;
-    uint64_t y = (x + 1) / 2;
+    uint64_t y = (x + 1) >> 1;
     while (y < x) {
         x = y;
-        y = (x + n / x) / 2;
+        y = (x + n / x) >> 1;
     }
     return x;
 }
