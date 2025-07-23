@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,c,visualstudiocode,rust,go,python,java,c++
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,c,visualstudiocode,rust,go,python,java,c++
+# Created by https://www.toptal.com/developers/gitignore/api/linux,c,visualstudiocode,rust,go,python,java,c++,kotlin
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,c,visualstudiocode,rust,go,python,java,c++,kotlin
 
 ### C ###
 # Prerequisites
@@ -117,6 +117,19 @@ go.work
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+### Kotlin ###
+# Compiled class file
+
+# Log file
+
+# BlueJ files
+
+# Mobile Tools for Java (J2ME)
+
+# Package Files #
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 
 ### Linux ###
 *~
@@ -319,6 +332,11 @@ Cargo.lock
 
 ### VisualStudioCode ###
 .vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
 # Local History for Visual Studio Code
 .history/
@@ -331,4 +349,4 @@ Cargo.lock
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,c,visualstudiocode,rust,go,python,java,c++
+# End of https://www.toptal.com/developers/gitignore/api/linux,c,visualstudiocode,rust,go,python,java,c++,kotlin
