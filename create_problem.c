@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
         do a = rand(); while (!is_prime(a));
         do b = rand(); while (!is_prime(b));
         printf("%" PRIu64 " * %" PRIu64 " = %" PRIu64 "\n", a, b, a * b);
-        fprintf(stream, "%" PRIu64 "\n", a * b);
+        if (stream != stdout) fprintf(stream, "%" PRIu64 "\n", a * b);
     }
     if (stream != stdout) fclose(stream);
     return 0;
