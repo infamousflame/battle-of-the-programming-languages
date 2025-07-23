@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <time.h>
 
+
 uint64_t int_sqrt(uint64_t n) {
     uint64_t x = n;
     uint64_t y = (x + 1) >> 1;
@@ -17,6 +18,7 @@ uint64_t int_sqrt(uint64_t n) {
     }
     return x;
 }
+
 
 uint64_t factorise(uint64_t n) {
     if (
@@ -34,9 +36,11 @@ uint64_t factorise(uint64_t n) {
     return n;
 }
 
+
 int main(int argc, char **argv) {
     if (argc > 2 || argc < 1) {
         printf("Usage: %s | %s filename\n", argv[0], argv[0]);
+        return 1;
     }
     clock_t start, end;
     FILE* stream = argc == 2 ? fopen(argv[1], "r") : stdin;
