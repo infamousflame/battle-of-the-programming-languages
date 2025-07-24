@@ -41,7 +41,7 @@ public class factorise {
             System.exit(1);
         }
         long start, end;
-        File file = args.length == 2 ? new File(args[1]) : null;
+        File file = args.length == 1 ? new File(args[0]) : null;
         Scanner scanner = file == null ? new Scanner(System.in) : new Scanner(file);
         start = System.nanoTime();
         long n, a;
