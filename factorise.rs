@@ -47,7 +47,7 @@ fn main() {
     let mut stream: BufReader<File> = BufReader::new(File::open(if argc == 2 { &argv[1] } else { "/dev/stdin" }).unwrap());
     start = Instant::now();
     let (mut n, mut a): (u64, u64);
-    let lines: u32;
+    let lines: i32;
     stream.read_line(&mut line).unwrap();
     lines = line.trim().parse().unwrap();
     for _ in 0..lines {
