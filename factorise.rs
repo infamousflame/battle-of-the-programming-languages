@@ -48,11 +48,12 @@ fn main() {
     start = Instant::now();
     let (mut n, mut a): (u64, u64);
     let lines: i32;
-    stream.read_line(&mut line).unwrap();
-    lines = line.trim().parse().unwrap();
+    let _ = stream.read_line(&mut line);
+    lines = line.trim().parse::<i32>().unwrap();
     for _ in 0..lines {
-        stream.read_line(&mut line).unwrap();
-        n = line.trim().parse().unwrap();
+        line.clear();
+        let _ = stream.read_line(&mut line);
+        n = line.trim().parse::<u64>().unwrap();
         a = factorise(n);
         println!("{} = {} * {}", n, a, n / a);
     }
