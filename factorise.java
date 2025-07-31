@@ -1,4 +1,4 @@
-/* The first benchmark program. The Java language.
+/* The third benchmark program. The Java language.
  * This will be used to test the various Java compilers.
  * This algorithm is the same one used across all of the benchmark programs,
  * to keep it fair.
