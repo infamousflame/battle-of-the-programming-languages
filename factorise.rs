@@ -1,4 +1,4 @@
-/* The first benchmark program. The Rust language.
+/* The fourth benchmark program. The Rust language.
  * This will be used to test the various Rust compilers.
  * This algorithm is the same one used across all of the benchmark programs,
  * to keep it fair.
