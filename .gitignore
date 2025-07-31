@@ -356,3 +356,5 @@ Cargo.lock
 factorise_clang
 factorise_gcc
 factorise_rust
+
+create_problem
