@@ -37,12 +37,16 @@ public class factorise {
 
     public static void main(String[] args) throws Exception {
         if (args.length > 1) {
-            System.out.printf("Usage: java factorise | java factorise filename\n");
+            System.out.printf(
+                "Usage: java factorise | java factorise filename\n"
+            );
             System.exit(1);
         }
         long start, end;
         File file = args.length == 1 ? new File(args[0]) : null;
-        Scanner scanner = file == null ? new Scanner(System.in) : new Scanner(file);
+        Scanner scanner = (file == 
+            null ? new Scanner(System.in) : new Scanner(file)
+        );
         start = System.nanoTime();
         long n, a;
         int lines;
@@ -54,6 +58,8 @@ public class factorise {
         }
         end = System.nanoTime();
         if (file != null) scanner.close();
-        System.out.printf("Time taken: %f s.\n", ((double)(end - start)) / 1e9);
+        System.out.printf("Time taken: %f s.\n", (
+            (double)(end - start)) / 1e9
+        );
     }
 }

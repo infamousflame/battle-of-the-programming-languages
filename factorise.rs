@@ -44,7 +44,9 @@ fn main() {
     }
     let (start, end): (Instant, Instant);
     let mut line: String = String::new();
-    let mut stream: BufReader<File> = BufReader::new(File::open(if argc == 2 { &argv[1] } else { "/dev/stdin" }).unwrap());
+    let mut stream: BufReader<File> = BufReader::new(
+        File::open(if argc == 2 { &argv[1] } else { "/dev/stdin" }).unwrap()
+    );
     start = Instant::now();
     let (mut n, mut a): (u64, u64);
     let lines: i32;
