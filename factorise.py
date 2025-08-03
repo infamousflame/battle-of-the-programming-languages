@@ -32,10 +32,10 @@ def factorise(n: int) -> int:
     return n
 
 
-if __name__ == "__main__":
+def main() -> int:
     if len(argv) > 2 or len(argv) < 1:
         print(f'Usage: {argv[0]} | {argv[0]} filename')
-        sys_exit(1)
+        return 1
     stream = open(argv[1], 'r') if len(argv) == 2 else stdin
     start: float = time()
     lines: int = int(stream.readline())
@@ -46,3 +46,8 @@ if __name__ == "__main__":
     end: float = time()
     if stream != stdin: stream.close()
     print(f'Time taken: {end - start} s.')
+    return 0
+
+
+if __name__ == '__main__':
+    sys_exit(main())
