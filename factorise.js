@@ -34,25 +34,40 @@ function factorise(n) {
 }
 
 
-function main() {
+async function main() {
+    const readline = require('readline');
     let argv = process.argv.slice(1);
     if (argv.length > 2 || argv.length < 1) {
         console.log("Usage: node factorise.js | node factorise.js filename");
         return 1;
     }
     let stream = argv.length == 2 ? fs.createReadStream(argv[1]) : process.stdin;
+    const rl = readline.createInterface({
+        input: stream,
+        crlfDelay: Infinity
+    });
+
     let start = performance.now();
-    let n, a;
-    let lines = parseInt(stream.read);
-    for (let i = 0; i < lines; i++) {
-        n = parseInt(stream.readline());
-        a = factorise(n);
-        console.log(`${n} = ${a} * ${n / a}`);
+    let lines = -1;
+    let i = 0;
+    for await (const line of rl) {
+        if (lines === -1) {
+            lines = parseInt(line);
+            continue;
+        }
+        let n = parseInt(line);
+        let a = factorise(n);
+        console.log(`${n} = ${a} * ${Math.floor(n / a)}`);
+        i++;
+        if (i >= lines) {
+            break;
+        }
     }
+
     let end = performance.now();
     if (stream != process.stdin) stream.close();
     console.log(`Time taken: ${(end - start) / 1000} s.`);
     return 0;
 }
 
-process.exit(main());
+main().then(process.exit);
