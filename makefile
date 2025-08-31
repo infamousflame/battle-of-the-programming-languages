@@ -6,7 +6,11 @@ all:
 	javac -g -Xlint:all -Xlint:-options factorise.java -d .
 	rustc factorise.rs -C opt-level=3 -o factorise_rust
 
+problems:
+	cc create_problem.c -o create_problem
+	./create_problem 4 problems.txt
+
 # Clean Everything!
 clean:
-	rm factorise_*
+	rm factorise_* create_problem problems.txt
 
